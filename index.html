@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LockBox</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>LockBox</h1>
+    <button class="button" onclick="showGeneratePassword()">Generate a Secure Password</button>
+    <button class="button" onclick="showCheckPassword()">Check Password for Breaches</button>
+
+    <div id="generatePassword" style="display: none;">
+        <h3>Generate a Secure Password</h3>
+        <label for="passwordLength">Enter the desired password length (default is 16):</label>
+        <input type="number" id="passwordLength" value="16">
+        <button class="button" onclick="generatePassword()">Generate Password</button>
+        <div id="generatedPassword" class="output"></div>
+        <button class="button" id="copyPassword" style="display: none;" onclick="copyPassword()">Copy</button>
+        <div id="copyConfirmation" class="copy-confirmation" style="display: none;">Password copied!</div>
+    </div>
+
+    <div id="checkPassword" style="display: none;">
+        <h3>Check a Password for Breaches</h3>
+        <label for="passwordInput">Enter password to check:</label>
+        <input type="text" id="passwordInput">
+        <button class="button" onclick="checkPassword()">Check Password</button>
+        <div id="passwordCheckResult" class="output"></div>
+    </div>
+
+    <div id="passwordSuggestions" class="suggestions" style="display: none;">
+        <h3>Suggested Alternatives:</h3>
+        <ul id="suggestionsList"></ul>
+    </div>
+</div>
+<footer>
+    <p><b>&copy; Krishna Gopal Jha. All rights reserved.</b></p>
+    <a href="https://www.linkedin.com/in/krishnagopaljha/" target="_blank">
+        <i class="fab fa-linkedin footer-icon linkedin"></i>
+    </a>
+    <a href="https://www.instagram.com/theindianpsych?igsh=MWd6ejcycTA4YTg4Mg==" target="_blank">
+        <i class="fab fa-instagram footer-icon instagram"></i>
+    </a>
+    <a href="#" target="_blank">
+        <i class="fab fa-github footer-icon github"></i>
+    </a>
+</footer>
+<!-- Include CryptoJS script (Make sure this is included first) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+
+<script src="scripts.js"></script>
+</body>
+</html>
